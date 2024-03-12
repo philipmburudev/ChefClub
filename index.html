@@ -21,8 +21,8 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">Categories</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
                 <li><a href="signin.html">Login</a></li>
             </ul>
         </div>
@@ -129,44 +129,33 @@
             </div>
         </div>
     </div>
-    <!--------------categories section-------------------------------->
-    <div class="categories">
-        <h2>categories</h2>
-        <div class="box">
-            <div class="ca-card">
-                <img src="maincourse.jfif" alt="">
-                <div class="content">
-                    <h3>Main Courses</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="ca-card">
-                <img src="maincourse.jfif" alt="">
-                <div class="content">
-                    <h3>Desserts</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="ca-card">
-                <img src="maincourse.jfif" alt="">
-                <div class="content">
-                    <h3>Healthy Eats</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
-                    <button>Read More</button>
-                </div>
-            </div>
-            <div class="ca-card">
-                <img src="maincourse.jfif" alt="">
-                <div class="content">
-                    <h3>Baking</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
-                    <button>Read More</button>
-                </div>
+    <!--------------submit recipes section-------------------------------->
+    <div class="main-container">
+
+            <div class="recipe-submission-container">
+                <h2>Submit Your Recipe</h2>
+                <form id="recipeForm" action="YOUR_SERVER_ENDPOINT" method="POST">
+                    <div class="form-group">
+                        <label for="recipeName">Recipe Name:</label>
+                        <input type="text" id="recipeName" name="recipeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="desserts">Desserts</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe">Recipe:</label>
+                        <textarea id="recipe" name="recipe" rows="6" required></textarea>
+                    </div>
+                    <button type="submit">Post Recipe</button>
+                </form>
             </div>
         </div>
-    </div>
 
 
 

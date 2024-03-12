@@ -150,7 +150,7 @@ transform: .4s;
 }
 .box .card img{
     width: 100%;
-    height: 1005;
+    height: 100%;
     object-fit: cover;
    
 }
@@ -224,7 +224,7 @@ transform: .4s;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    padding: 15px;
+    padding: 15px; 
     background-color: #edffef;
     color: #182f32;
     text-align: center;
@@ -351,3 +351,172 @@ footer h5{
     text-align: center;
     color: #97a2a3;
 }
+
+
+/*categories.html*/
+
+
+.ca-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    margin: 20px; 
+
+
+}
+
+
+.ca-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; 
+    border-radius: 50%; 
+}
+
+
+
+
+.ca-card .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(3%, -50%); 
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px); 
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+
+.ca-card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+
+}
+
+.ca-card:hover img {
+    transform: scale(1.1); 
+}
+
+
+/*categories pictures*/
+.ca-card img.category-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.button-link {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.629);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+.button-link:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+
+.ca-card a, .ca-card a:visited {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.ca-card h3, .ca-card p {
+    margin: 0; 
+    padding: 0; 
+    color: black; 
+}
+
+
+
+
+
+
+
+/*to subit recipes*/
+.recipe-submission-container {
+    background: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-submission-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.form-group button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+
+.main-container {
+    width: 100%; 
+    height: 100%; 
+    background-color: #213032;
+    margin: 0; 
+    padding: 0; 
+}
+
+
