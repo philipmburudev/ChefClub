@@ -1,3 +1,6 @@
+<?php include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,82 +63,41 @@
     <div class="recipe">
         <h2>Featured Recipes</h2>
         <div class="box">
-            <div class="card">
-                <img src="r1.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 1</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r2.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 2</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r3.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 3</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r4.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 4</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r5.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 5</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r6.png" alt="">
-                <div class="content">
-                    <h3>Recipe 6</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r7.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 7</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="r8.jfif" alt="">
-                <div class="content">
-                    <h3>Recipe 8</h3>
-                    <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
-                    <button>View Recipe</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--------------submit recipes section-------------------------------->
-    <div class="main-container">
+            <?php
+            // This is to fetch random recipes
+            $sql = "SELECT * FROM recipe ORDER BY RAND() LIMIT 8";
+            $result = $conn->query($sql);
 
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="card" onclick="window.location.href=\'recipes_view.php?highlight=' . $row["id"] . '\';">';
+                    echo '<img src="' . $row["image"] . '" alt="">';
+                    echo '<div class="content">';
+                    echo '<h3>' . $row["title"] . '</h3>';
+                    echo '</div>';
+                    echo '</a>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No recipes found.";
+            }
+            ?>
+        </div>
+
+    </div>
+
+    <!--------------submit recipes section-------------------------------->
+
+    <div class="main-container2">
         <div class="recipe-submission-container">
             <h2>Submit Your Recipe</h2>
-            <form id="recipeForm" action="YOUR_SERVER_ENDPOINT" method="POST">
+            <form id="recipeForm" action="submit_recipe.php" method="POST" enctype="multipart/form-data">
+                <!-- Title of the recipe -->
                 <div class="form-group">
-                    <label for="recipeName">Recipe Name:</label>
-                    <input type="text" id="recipeName" name="recipeName" required>
+                    <label for="title">Recipe Title:</label>
+                    <input type="text" id="title" name="title" required>
                 </div>
+
                 <div class="form-group">
                     <label for="category">Category:</label>
                     <select id="category" name="category" required>
@@ -145,46 +107,69 @@
                         <option value="desserts">Desserts</option>
                     </select>
                 </div>
+
+                <!-- Ingredients -->
                 <div class="form-group">
-                    <label for="recipe">Recipe:</label>
-                    <textarea id="recipe" name="recipe" rows="6" required></textarea>
+                    <label for="ingredients">Ingredients:</label>
+                    <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
                 </div>
+
+                <!-- Process -->
+                <div class="form-group">
+                    <label for="process">Process:</label>
+                    <textarea id="process" name="process" rows="6" required></textarea>
+                </div>
+
+
+                <!-- @mohammed , @tinotenda , modify this to include the logic when a user has already logged in -->
+                <div class="form-group" style="display:none;"> <!-- Hide this if you're setting the author automatically -->
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" value="Anon" required> <!-- Assuming Anon as a default value -->
+                </div>
+
+                <!-- Image upload for the recipe 
+                <div class="form-group">
+                    <label for="image">Recipe Image:</label>
+                    <input type="file" id="image" name="image" required>
+                </div>-->
+
                 <button type="submit">Post Recipe</button>
             </form>
         </div>
-    </div>
 
 
 
-    <!------------contact section-------------------------->
-    <section class="contact">
-        <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p><strong>Address:</strong> PMB CT3 Cantonments</p>
-            <p><strong>Phone:</strong>+233549034289</p>
-            <p><strong>Email:</strong>hello@chiefchef.com</p>
-        </div>
-        <div class="contact-form">
-            <h2>Contact Form</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <footer>
-        <div class="social-icons">
-            <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
-            <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
-            <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
-        </div>
-        <h5>CopyRight © 2024. All right reserved </h5>
-    </footer>
+
+        <!------------contact section-------------------------->
+        <section class="contact">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> PMB CT3 Cantonments</p>
+                <p><strong>Phone:</strong>+233549034289</p>
+                <p><strong>Email:</strong>hello@chiefchef.com</p>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="social-icons">
+                <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
+                <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+                <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
+            </div>
+            <h5>CopyRight © 2024. All right reserved </h5>
+        </footer>
 </body>
+
 
 </html>
