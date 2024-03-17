@@ -66,6 +66,7 @@
                     <h3>Recipe 1</h3>
                     <P>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</P>
                     <button>View Recipe</button>
+                    
                 </div>
             </div>
             <div class="card">
