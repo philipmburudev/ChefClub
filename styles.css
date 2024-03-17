@@ -53,7 +53,13 @@ background: #8fb6a2;
     top: 40%;
     left: 8%;
     transform: translateY(-50%);
+
 }
+
+
+
+
+
 h1{
     color: #213032;
     font-size: 55px;
@@ -82,6 +88,47 @@ transform: .4s;
     border: 2px solid black;
     cursor: pointer;
 }
+
+
+.button2{
+    position: absolute;
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 13px 30px;
+    transform: .4s;
+    margin-left: 230px;
+    margin-top: 0px;
+    margin-bottom: 200px;
+    margin-right: 20px;
+}
+
+
+.button2:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .about{
     width: 100%;
     padding: 100px 0px;
@@ -460,20 +507,7 @@ footer h5{
 
 
 
-/*to subit recipes*/
-.recipe-submission-container {
-    background: white;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-.recipe-submission-container h2 {
-    text-align: center;
-    color: #333;
-}
 
 .form-group {
     margin-bottom: 15px;
