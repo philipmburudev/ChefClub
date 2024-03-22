@@ -1,0 +1,26 @@
+
+body{
+
+    width: 100%;
+    background-color: #213032;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/*to subit recipes*/
+.recipe-submission-containerr {  
+    margin-top: 200px;
+    margin-bottom: 200px;background: white;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.recipe-submission-containerr h2 {
+    text-align: center;
+    color: #333;
+}

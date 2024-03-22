@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,300;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Chef Club Recipes</title>
+
+    <link rel="stylesheet" href="addrecipecc.css">
+
+
+</head>
+
+<body>
+    <header> 
+        <a class="logo" href="index.html">Home</a>
+    </header>   
+
+
+    <!--------------submit recipes section-------------------------------->
+    <div class="main-container">
+
+        <div class="recipe-submission-containerr">
+            <h2>Submit Your Recipe</h2>
+            <form id="recipeForm" action="YOUR_SERVER_ENDPOINT" method="POST">
+                <div class="form-group">
+                    <label for="recipeName">Recipe Name:</label>
+                    <input type="text" id="recipeName" name="recipeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="desserts">Desserts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recipe">Recipe:</label>
+                    <textarea id="recipe" name="recipe" rows="6" required></textarea>
+                </div>
+                <button type="submit">Post Recipe</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+
+
