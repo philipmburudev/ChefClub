@@ -29,7 +29,7 @@ include 'auth_session.php';
             </ul>
         </div>
     </header>
- <main class="about-page">
+    <main class="about-page">
         <h1>About ChiefChef</h1>
         <p>ChiefChef is a culinary platform dedicated to bringing food lovers and cooking enthusiasts together. Our mission is to inspire creativity in the kitchen by providing a vast collection of recipes that cater to all tastes and dietary needs. From beginners to experienced cooks, there's something for everyone at ChiefChef.</p>
 
@@ -42,7 +42,7 @@ include 'auth_session.php';
         <p>With Regards, Chef Club</p>
     </main>
 
-    <footer> 
+    <footer>
         <div class="social-icons">
             <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
             <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>

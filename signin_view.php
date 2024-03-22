@@ -1,10 +1,10 @@
 <?php
-ob_start(); 
+ob_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-include 'connection.php'; 
+include 'connection.php';
 
 $errorMsg = '';
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 $conn->close();
-ob_end_flush(); 
+ob_end_flush();
 ?>
 
 
@@ -78,7 +78,7 @@ ob_end_flush();
             <div class="login">
                 <p>Don't have an account? <a href="signup_view.php">Sign up</a></p>
             </div>
-        </form> 
+        </form>
     </div>
 </body>
 

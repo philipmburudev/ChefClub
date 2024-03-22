@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connection.php'; 
+include 'connection.php';
 include 'auth_session.php';
 
 
@@ -28,4 +28,3 @@ if ($query->execute()) {
 
 $query->close();
 $conn->close();
- 

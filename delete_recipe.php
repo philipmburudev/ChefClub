@@ -8,7 +8,7 @@ if (!isset($_GET['id'])) {
 }
 
 $recipeId = $_GET['id'];
-$userId = $_SESSION['id']; 
+$userId = $_SESSION['id'];
 
 $query = $conn->prepare("SELECT id FROM recipe WHERE id = ? AND user_id = ?");
 if (!$query) {
@@ -33,13 +33,10 @@ $delete->bind_param("ii", $recipeId, $userId);
 $delete->execute();
 
 if ($delete->affected_rows > 0) {
-    echo "Recipe deleted successfully."; 
+    echo "Recipe deleted successfully.";
     header('Location: profile_view.php');
     exit;
 } else {
     echo "An error occurred or no changes were made.";
 }
 $delete->close();
-
-
-?>

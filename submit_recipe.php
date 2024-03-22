@@ -10,22 +10,22 @@ function redirectWithError($error)
     exit;
 }
 
-function insertMedia($fileName, $userId) {
+function insertMedia($fileName, $userId)
+{
     global $conn;
     $filePath = "uploads/" . $fileName;
     $sql = "INSERT INTO media (fileName, user_id) VALUES (?, ?)";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("si", $filePath, $userId);
         if ($stmt->execute()) {
-    $mediaId = $conn->insert_id;
-    $stmt->close();
-    return $mediaId;
-} else {
-    error_log("Error inserting media: " . $stmt->error); 
-    $stmt->close();
-    redirectWithError("Error inserting media: " . $conn->error);
-}
-
+            $mediaId = $conn->insert_id;
+            $stmt->close();
+            return $mediaId;
+        } else {
+            error_log("Error inserting media: " . $stmt->error);
+            $stmt->close();
+            redirectWithError("Error inserting media: " . $conn->error);
+        }
     } else {
         error_log("Error preparing media insert statement: " . $conn->error); // Log the error
         redirectWithError("Error preparing media insert statement: " . $conn->error);
@@ -36,7 +36,8 @@ function insertMedia($fileName, $userId) {
 
 
 
-function handleFileUpload($userId) {
+function handleFileUpload($userId)
+{
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $originalFileName = basename($_FILES["image"]["name"]);
         $fileName = time() . '_' . $originalFileName;
@@ -101,4 +102,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-?>

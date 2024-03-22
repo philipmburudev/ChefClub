@@ -45,13 +45,13 @@ $recipesQuery->close();
     <div class="user-info">
         <h2><?php echo htmlspecialchars($userResult['firstName'] . ' ' . $userResult['lastName']); ?>'s Profile</h2>
         <p>Email: <?php echo htmlspecialchars($userResult['email']); ?></p>
-=        <p>Date of Birth (DOB): <?php echo htmlspecialchars($userResult['dob']); ?></p>
+        = <p>Date of Birth (DOB): <?php echo htmlspecialchars($userResult['dob']); ?></p>
         <p>Gender: <?php echo htmlspecialchars($userResult['gender']); ?></p>
         <p>Contact: <?php echo htmlspecialchars($userResult['contact']); ?></p>
 
         <!-- Form to update user information -->
         <form action="update_profile.php" method="post">
-         
+
 
             <label for="newContact">New Contact:</label>
             <input type="text" id="newContact" name="newContact" placeholder="Enter new contact number">
@@ -75,7 +75,7 @@ $recipesQuery->close();
                     <div class="recipe-card">
                         <div class="recipe-info">
                             <h4 class="recipe-title"><?php echo htmlspecialchars($row['title']); ?></h4>
-                            
+
                             <p><?php echo "Ingredients: " . htmlspecialchars($row['ingredients']); ?></p>
                             <p><?php echo "Process: " . htmlspecialchars($row['process']); ?></p>
                             <!-- Edit and Delete Links -->
@@ -95,11 +95,11 @@ $recipesQuery->close();
 
 
     <!-- Logout Button -->
-<div class="form-container2">
-    <form action="signin_view.php" class="button-login" method="post">
-        <button type="submit">Logout</button>
-    </form>
-</div>
+    <div class="form-container2">
+        <form action="signin_view.php" class="button-login" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 
 
 

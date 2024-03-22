@@ -2,7 +2,7 @@
 
 include 'auth_session.php';
 session_start();
-$_SESSION['user_id'] = $user['user_id']; 
+$_SESSION['user_id'] = $user['user_id'];
 $_SESSION['logged_in'] = true;
 
 
@@ -82,14 +82,14 @@ $_SESSION['logged_in'] = true;
         </div>
     </div>
 
-        <footer>
-            <div class="social-icons">
-                <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
-                <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
-                <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
-            </div>
-            <h5>CopyRight © 2024. All right reserved </h5>
-        </footer>
-    </body>
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
+            <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+            <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
+        </div>
+        <h5>CopyRight © 2024. All right reserved </h5>
+    </footer>
+</body>
 
 </html>

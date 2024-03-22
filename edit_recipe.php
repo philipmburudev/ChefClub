@@ -5,7 +5,7 @@ include 'connection.php';
 include 'auth_session.php';
 
 
-$userId = $_SESSION['id']; 
+$userId = $_SESSION['id'];
 
 if (!isset($_GET['id'])) {
     echo "Recipe ID is not provided.";
@@ -38,14 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ingredients = $_POST['ingredients'];
     $process = $_POST['process'];
 
- // Update the recipe
-$update = $conn->prepare("UPDATE recipe SET title = ?, ingredients = ?, process = ? WHERE id = ? AND user_id = ?");
-if (!$update) {
-    echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
-    exit;
-}
-$update->bind_param("sssii", $title, $ingredients, $process, $recipeId, $userId);
-$update->execute();
+    // Update the recipe
+    $update = $conn->prepare("UPDATE recipe SET title = ?, ingredients = ?, process = ? WHERE id = ? AND user_id = ?");
+    if (!$update) {
+        echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
+        exit;
+    }
+    $update->bind_param("sssii", $title, $ingredients, $process, $recipeId, $userId);
+    $update->execute();
 
 
 
@@ -58,7 +58,7 @@ $update->execute();
     }
     $update->close();
     // Redirect after update 
-    header('Location: profile_view.php'); 
+    header('Location: profile_view.php');
     exit;
 }
 
@@ -78,9 +78,9 @@ $query->close();
     <title>Edit Recipe</title>
 
 
- 
-</head>  
- 
+
+</head>
+
 <body>
     <h2>Edit Recipe</h2>
     <form action="" method="post">

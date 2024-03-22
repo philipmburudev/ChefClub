@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; 
+$servername = "localhost";
 $username = "root";
-$password = "ericafari";
-$dbname = "chef_cl"; 
+$password = "";
+$dbname = "chef_cl";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -16,4 +16,3 @@ if ($conn->connect_error) {
 
 
 // $conn->close();
-?>

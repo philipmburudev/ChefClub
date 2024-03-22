@@ -100,7 +100,7 @@ ALTER TABLE `recipe`
 ADD COLUMN `user_id` INT NULL,
 ADD CONSTRAINT `fk_recipe_users`
 FOREIGN KEY (`user_id`)
-REFERENCES `users` (`id`)
+REFERENCES `users` (`id`) 
 ON DELETE SET NULL;
 
 ALTER TABLE `users`

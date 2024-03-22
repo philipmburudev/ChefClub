@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Hash  password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-$insertQuery = $conn->prepare("INSERT INTO users (username, firstName, lastName, password, email, dob, gender, contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-$insertQuery->bind_param("ssssssss", $username, $firstName, $lastName, $hashedPassword, $email, $dob, $gender, $contact);
+    $insertQuery = $conn->prepare("INSERT INTO users (username, firstName, lastName, password, email, dob, gender, contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $insertQuery->bind_param("ssssssss", $username, $firstName, $lastName, $hashedPassword, $email, $dob, $gender, $contact);
     if ($insertQuery->execute()) {
         echo "Signup successful. You can now <a href='signin_view.php'>login</a>.";
     } else {
@@ -69,7 +69,7 @@ $insertQuery->bind_param("ssssssss", $username, $firstName, $lastName, $hashedPa
                 <input type="text" id="lastName" name="lastName" required>
             </div>
 
-        
+
 
             <div class="form-group">
                 <label for="dob">Date of Birth:</label>
