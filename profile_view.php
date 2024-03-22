@@ -45,7 +45,7 @@ $recipesQuery->close();
     <div class="user-info">
         <h2><?php echo htmlspecialchars($userResult['firstName'] . ' ' . $userResult['lastName']); ?>'s Profile</h2>
         <p>Email: <?php echo htmlspecialchars($userResult['email']); ?></p>
-        = <p>Date of Birth (DOB): <?php echo htmlspecialchars($userResult['dob']); ?></p>
+        <p>Date of Birth (DOB): <?php echo htmlspecialchars($userResult['dob']); ?></p>
         <p>Gender: <?php echo htmlspecialchars($userResult['gender']); ?></p>
         <p>Contact: <?php echo htmlspecialchars($userResult['contact']); ?></p>
 
