@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>User Dashboard | Chef Club Recipes</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Chef Club</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="profilepage.html">My Profile</a></li>
+                <li><a href="submit-recipe.html">Submit a Recipe</a></li>
+                <li><a href="my-recipes.html">My Recipes</a></li>
+                <li><a href="rate-recipes.html">Rate Recipes</a></li>
+            </ul>
+        </div>     
+    </header>
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">My Dashboard</h1>
+
+        <div class="row text-center mb-4">
+            <!-- Widget for Recipe Statistics -->
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5>Recipes Submitted</h5>
+                        <p class="card-text">8</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5>Recipes in Progress</h5>
+                        <p class="card-text">2</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5>Recipes Awaiting Approval</h5>
+                        <p class="card-text">1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5>Recipes Published</h5>
+                        <p class="card-text">5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table for Recent Recipes -->
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <h2>Recently Submitted Recipes</h2>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Recipe Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Submitted On</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- This part will be dynamically filled with recipes -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <a href="#" class="social-icon"> <i class="fab fa-facebook"></i> </a>
+        <a href="#" class="social-icon"> <i class="fab fa-twitter"></i> </a>
+        <a href="#" class="social-icon"> <i class="fab fa-instagram"></i> </a>
+        <h5>CopyRight © 2024. All rights reserved </h5>   
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
