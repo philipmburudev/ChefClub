@@ -199,6 +199,28 @@ $conn->close();
         </script> 
 
 
+
+
+
+
+    <script>
+        window.onload = function() {
+            var highlightedId = '<?php echo $highlightedId; ?>';
+            if (highlightedId) {
+                var element = document.getElementById('recipe-' + highlightedId);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    element.classList.add('highlight');
+                }
+            }
+
+        };
+    </script>
+
+
 </body>
 
 

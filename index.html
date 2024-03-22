@@ -31,10 +31,17 @@
         <div class="content">
             <h1>Discover Your Cooking Game</h1>
             <h3>Elevate Your Cooking Game</h3>
-            <div class="button">Start Cooking</div>
+            <div>
+                <a class="button" href="recipes.html">Start Cooking</a>
+            </div>
+
+            <div>
+                <a class="button2" href="signin.html">Post Recipe</a>
+            </div>
 
 
         </div>
+        
     </div>
 
 
@@ -129,33 +136,7 @@
             </div>
         </div>
     </div>
-    <!--------------submit recipes section-------------------------------->
-    <div class="main-container">
-
-            <div class="recipe-submission-container">
-                <h2>Submit Your Recipe</h2>
-                <form id="recipeForm" action="YOUR_SERVER_ENDPOINT" method="POST">
-                    <div class="form-group">
-                        <label for="recipeName">Recipe Name:</label>
-                        <input type="text" id="recipeName" name="recipeName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category:</label>
-                        <select id="category" name="category" required>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                            <option value="desserts">Desserts</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="recipe">Recipe:</label>
-                        <textarea id="recipe" name="recipe" rows="6" required></textarea>
-                    </div>
-                    <button type="submit">Post Recipe</button>
-                </form>
-            </div>
-        </div>
+    
 
 
 
